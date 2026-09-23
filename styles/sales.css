@@ -1,0 +1,191 @@
+/* PR-004 sales page styles — extracted verbatim from supplied <style> blocks (platform QA: CSP style-src has no 'unsafe-inline') */
+  :root {
+    --charcoal: #1a1a1a;
+    --cream: #f5f0e8;
+    --gold: #f0c234;
+    --pd-vertical: #1a1e2e; /* Personal Development vertical color, per Brand Registry */
+    --pd-vertical-light: #2a2f45;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.25;
+    margin: 0 0 0.5em 0;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  /* Desktop UX: widen the reading column on larger viewports instead of
+     leaving a narrow centered strip on wide screens. Mobile/tablet (below
+     900px) is unaffected — this is additive to the mobile-first base above.
+     Widths are capped, not maxed out, to keep body-copy line length in a
+     comfortable reading range (~75-85 characters) rather than stretching
+     paragraphs edge-to-edge on very wide monitors. */
+  @media (min-width: 900px) {
+    .container { max-width: 760px; padding: 0 40px; }
+    body { font-size: 18px; }
+  }
+  @media (min-width: 1280px) {
+    .container { max-width: 860px; }
+  }
+
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid rgba(26,26,26,0.08); }
+
+  p { margin: 0 0 1.1em 0; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ---------- HERO ---------- */
+  #hero {
+    background: var(--pd-vertical);
+    color: var(--cream);
+    padding: 64px 0 48px 0;
+    border-top: none;
+  }
+  #hero h1 {
+    font-size: clamp(1.7rem, 5vw, 2.5rem);
+    color: #ffffff;
+  }
+  #hero .subhead {
+    font-size: clamp(1.05rem, 3vw, 1.3rem);
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  /* ---------- CTA BUTTONS ---------- */
+  .cta-button {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 24px auto 0 auto;
+    padding: 16px 24px;
+    min-height: 48px;
+    background: var(--gold);
+    color: var(--charcoal);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .cta-button:hover { filter: brightness(1.05); }
+  .cta-sub {
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    margin-top: 10px;
+  }
+
+  /* ---------- SECTION-SPECIFIC ---------- */
+  #mechanism { background: var(--cream); }
+  #mechanism h2, #whats-inside h2, #creator-story h2, #offer-stack h2, #guarantee h2, #objections h2, #cta-close h2 {
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    color: var(--pd-vertical);
+  }
+
+  #creator-story {
+    background: #ffffff;
+  }
+  #creator-story .byline {
+    font-weight: 700;
+    margin-top: 18px;
+  }
+
+  #offer-stack {
+    background: var(--pd-vertical);
+    color: var(--cream);
+  }
+  #offer-stack h2 { color: #ffffff; }
+  #offer-stack .offer-line { font-weight: 600; }
+  #offer-stack .price-block {
+    text-align: center;
+    margin: 28px 0 8px 0;
+    padding: 20px;
+    border: 1px solid rgba(245,240,232,0.3);
+    border-radius: 8px;
+  }
+  #offer-stack .price-block .value-strike {
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 0.95rem;
+  }
+  #offer-stack .price-block .final-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin: 6px 0;
+  }
+
+  #guarantee {
+    background: var(--cream);
+    text-align: center;
+  }
+  #guarantee p { max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  .objection-block { margin-bottom: 28px; }
+  .objection-block:last-child { margin-bottom: 0; }
+  .objection-block .q {
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+
+  #cta-close {
+    background: var(--pd-vertical);
+    color: var(--cream);
+    text-align: center;
+  }
+  #cta-close h2 { color: #ffffff; }
+
+  #footer-legal {
+    background: var(--charcoal);
+    color: rgba(245,240,232,0.7);
+    font-size: 0.82rem;
+    text-align: center;
+    padding: 32px 0;
+  }
+  #footer-legal a, #guarantee a { color: var(--gold); }
+  #footer-legal p { margin-bottom: 0.6em; }
+
+  @media (max-width: 480px) {
+    section { padding: 40px 0; }
+    body { font-size: 16px; }
+  }
+
+
+  /* ---------- INTEGRATED STAGE 8 VISUALS ---------- */
+  .visual-asset { display:block; width:100%; height:auto; margin:28px auto; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.10); }
+  .visual-hero { width:100%; max-width:760px; }
+  .visual-wide { max-width:760px; }
+  .visual-portrait { max-width:420px; }
+  .visual-card { max-width:420px; }
+  .visual-seal { max-width:190px; box-shadow:none; }
+  .visual-caption { text-align:center; font-size:.78rem; opacity:.65; margin-top:-16px; }
+  .visual-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; align-items:start; margin:28px 0; }
+  .visual-grid .visual-asset { margin:0; }
+  @media (max-width:640px) { .visual-grid { grid-template-columns:1fr; } }
+.product-nav{margin:28px 0 0;padding:18px 0;border-top:1px solid rgba(26,26,26,.12);border-bottom:1px solid rgba(26,26,26,.12)}
+.product-nav-inner{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;font-family:Poppins,Arial,sans-serif;font-size:14px;line-height:1.5}
+.product-nav a{color:inherit;text-decoration:none;font-weight:600}
+.product-nav a:hover{text-decoration:underline}
+.product-nav .current{font-weight:500;opacity:.72}
+.legal-links{margin-top:10px;font-size:13px;line-height:1.7}
+.legal-links a{color:inherit}

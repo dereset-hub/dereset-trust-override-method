@@ -1,0 +1,14 @@
+/* Platform 404 — DeReset shared brand constants only */
+:root { --charcoal:#1a1a1a; --cream:#f5f0e8; --gold:#f0c234; }
+* { box-sizing:border-box; }
+html, body { height:100%; }
+body { margin:0; display:flex; flex-direction:column; background:var(--charcoal); color:var(--cream); font-family:'Poppins',sans-serif; line-height:1.6; }
+.nf { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:48px 24px; }
+.nf-code { font-family:'Playfair Display',serif; font-size:4rem; font-weight:800; color:var(--gold); margin:0; line-height:1; }
+.nf h1 { font-family:'Playfair Display',serif; font-size:clamp(1.5rem,5vw,2.2rem); margin:16px 0 8px; }
+.nf p { margin:0 0 8px; opacity:.85; }
+.nf-button { display:inline-block; margin-top:24px; padding:14px 28px; min-height:48px; background:var(--gold); color:var(--charcoal); font-weight:700; text-decoration:none; border-radius:6px; }
+.nf-button:hover { filter:brightness(1.05); }
+.nf-alt { margin-top:16px !important; font-size:.9rem; }
+.nf-alt a { color:var(--gold); }
+.nf-footer { text-align:center; font-size:.8rem; opacity:.6; padding:24px; }
