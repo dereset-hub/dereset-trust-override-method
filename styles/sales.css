@@ -189,3 +189,21 @@
 .product-nav .current{font-weight:500;opacity:.72}
 .legal-links{margin-top:10px;font-size:13px;line-height:1.7}
 .legal-links a{color:inherit}
+
+/* ============================================================
+   DESKTOP LAYOUT — platform addition 2026-09-24 (user-approved desktop widening).
+   Applies only at 1280px and above: phones and tablets are unchanged.
+   ============================================================ */
+@media (min-width: 1280px) {
+  html { font-size: 17px; }
+  body { font-size: 19px; }
+  .container { max-width: 1000px; padding: 0 56px; }
+  .visual-hero, .visual-wide { max-width: 888px; }
+  .visual-card, .visual-portrait { max-width: 480px; }
+}
+@media (min-width: 1440px) {
+  html { font-size: 18px; }
+  body { font-size: 20px; }
+  .container { max-width: 1080px; padding: 0 60px; }
+  .visual-hero, .visual-wide { max-width: 960px; }
+}
